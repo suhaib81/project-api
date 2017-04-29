@@ -40,6 +40,7 @@ Try to make a new entity (e.g. "products") and its corresponding route
 - Create a file under `./lib/routers` and call it `products.js`
 - Take a look at `students.js` or `teachers.js`. What the file does is: start a new `express.Router()` object, add some routes to it (e.g. `router.get` or `router.post` and then export that router). Do the same for `products.js`.
 - Add the file to the main express application in `./lib/app.js` by requiring it and giving it a path. Under routers, we define the base path to which our products router will be added. Express will "merge" paths from the main router with the child `products` router.
+- Try it out! go to your new path in your browser or using `curl -XGET 'localhost:3000/v1/api/products'`
 
 ## Step 6: Try it out (2): Create a MySQL schema
 Try to make a new entity (e.g. "products") and its MySQL table
