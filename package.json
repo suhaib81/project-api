@@ -1,0 +1,31 @@
+{
+  "name": "project-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "daanaerts <daanaerts@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node lib/index.js",
+    "migrate-up": "node node_modules/db-migrate/bin/db-migrate up --config database/config.json --migrations-dir=database/migrations",
+    "migrate-down": "node node_modules/db-migrate/bin/db-migrate down --config database/config.json --migrations-dir=database/migrations",
+    "migrate-reset": "node node_modules/db-migrate/bin/db-migrate reset --config database/config.json --migrations-dir=database/migrations",
+    "seed": "node node_modules/db-migrate/bin/db-migrate seed --config database/config.json",
+    "create-migration": "node node_modules/db-migrate/bin/db-migrate create --config database/config.json --migrations-dir=database/migrations --sql-file --"
+  },
+  "engines": {
+    "node": ">=7.3.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "mysql2": "^1.2.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "db-migrate": "^0.10.0-beta.20",
+    "db-migrate-mysql": "^1.1.10"
+  }
+}
