@@ -43,7 +43,7 @@ Try to make a new entity (e.g. "products") and its corresponding route
 ## Step 6: Try it out (2): Create a MySQL schema
 Try to make a new entity (e.g. "products") and its MySQL table
 - Go to `package.json` and checkout the `scripts` section. It contains a couple of commands that can execute `node-db-migrate` commands. The most essential ones are: `node run migrate-up` `node run migrate-down` `node run create-migration {{migration-name}}`
-- Check if the database is running. Try to connect to the database by copy/pasting the below command that starts with `docker run...` If it doesn't work, rerun the `sh database/create_database.sh` script to start the db. To see if the mysql docker container is running you can type `docker ps`
+- Check if the database is running. Try to connect to the database by running `sh database/connect_database.sh` If it doesn't work, rerun the `sh database/create_database.sh` script to start the db. To see if the mysql docker container is running you can type `docker ps`
 - To create a new table we run `npm run create-migration products`
 - Go to `./database/migrations/sqls/#####-products-up.sql`
 - Write `CREATE TABLE products` command with some fields
@@ -55,7 +55,7 @@ Try to make a new entity (e.g. "products") and its MySQL table
 ## (Optional) Connect to MySQL DB from the CLI
 ```
 // Shell:
-docker run -it --rm --link hyf-db:mysql mysql:8 sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
+sh database/connect_database.sh
 
 // Once connected
 USE hyf_db;
