@@ -27,8 +27,9 @@ npm start
 
 ## Step 4: Read essential docs of these software packages
 - [node-db-migrate](https://db-migrate.readthedocs.io/en/latest/) for managing the database structure using migrations
-- [expressjs](http://expressjs.com/)
-- [mysql2](https://github.com/sidorares/node-mysql2)
+- [expressjs](http://expressjs.com/) for routing
+- [mysql2](https://github.com/sidorares/node-mysql2) for talking to MySQL with promise support
+- [dotenv](https://github.com/motdotla/dotenv) for saving passwords etc safely.
 
 Nice to read but not required to work:
 - [Docker](https://www.docker.com/what-docker)
